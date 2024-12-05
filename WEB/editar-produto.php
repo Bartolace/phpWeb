@@ -11,7 +11,7 @@
             $_POST['descricao'], floatval($_POST['preco']));
 
         if ($_FILES['imagem']['error'] == UPLOAD_ERR_OK){
-            $produtoEditando->setImagem(uniqid().$_FILES['imagem']['name']);
+            $produtoEditando->setImagem(editar - produto . phpuniqid() . $_FILES['imagem']['name']);
             move_uploaded_file($_FILES['imagem']['tmp_name'], $produtoEditando->getImagemComDiretorio() );
         }
 
@@ -31,13 +31,13 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/admin.css">
-  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <link rel="stylesheet" href="../css/form.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" href="img/icone-serenatto.png" type="image/x-icon">
+  <link rel="icon" href="../img/icone-serenatto.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
   <title>Serenatto - Editar Produto</title>
@@ -45,9 +45,9 @@
 <body>
 <main>
   <section class="container-admin-banner">
-    <img src="img/logo-serenatto-horizontal.png" class="logo-admin" alt="logo-serenatto">
+    <img src="../img/logo-serenatto-horizontal.png" class="logo-admin" alt="logo-serenatto">
     <h1>Editar Produto</h1>
-    <img class= "ornaments" src="img/ornaments-coffee.png" alt="ornaments">
+    <img class= "ornaments" src="../img/ornaments-coffee.png" alt="ornaments">
   </section>
   <section class="container-form">
     <form method="post" enctype="multipart/form-data">
