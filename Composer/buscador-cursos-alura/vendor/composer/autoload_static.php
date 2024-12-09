@@ -12,6 +12,7 @@ class ComposerStaticInit4a5a002b192704c99a43f3f4c41a21ba
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        'c850f9101d3ee39964712e8d8d673c07' => __DIR__ . '/../..' . '/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -36,7 +37,10 @@ class ComposerStaticInit4a5a002b192704c99a43f3f4c41a21ba
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
-            'Gabrielbartolace\\BuscadorCursos\\' => 32,
+        ),
+        'A' => 
+        array (
+            'Alura\\BuscadorCursos\\' => 21,
         ),
     );
 
@@ -82,7 +86,7 @@ class ComposerStaticInit4a5a002b192704c99a43f3f4c41a21ba
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Gabrielbartolace\\BuscadorCursos\\' => 
+        'Alura\\BuscadorCursos\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -90,6 +94,7 @@ class ComposerStaticInit4a5a002b192704c99a43f3f4c41a21ba
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Teste' => __DIR__ . '/../..' . '/Teste.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

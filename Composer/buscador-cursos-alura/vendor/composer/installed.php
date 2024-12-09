@@ -3,7 +3,7 @@
         'name' => 'gabrielbartolace/buscador-cursos',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '8685d6f0a9cb8513a6ce6fb457694982f510a4ff',
+        'reference' => 'ac3f8804a78f0304efc5120caa63cc0a4bfeabd5',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'gabrielbartolace/buscador-cursos' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '8685d6f0a9cb8513a6ce6fb457694982f510a4ff',
+            'reference' => 'ac3f8804a78f0304efc5120caa63cc0a4bfeabd5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
