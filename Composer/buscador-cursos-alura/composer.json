@@ -19,9 +19,7 @@
         "symfony/css-selector": "^7.2"
     },
     "autoload" : {
-        "files": [
-            "./functions.php"
-        ],
+        "files": [ "./functions.php"],
         "classmap": [
             "./Teste.php"
         ],
@@ -51,5 +49,7 @@
     },
     "scripts-descriptions": {
         "check": "Roda verificações do código. PHAN, PHPCS e PHPUNIT"
-    }
+    },
+    "license": "GPL-3.0",
+    "bin": ["buscar-cursos.php"]
 }
