@@ -2,11 +2,6 @@
     "name": "gabrielbartolace/buscador-cursos",
     "description": "Projeto que busca os cursos no site da Alura",
     "type": "library",
-    "autoload": {
-        "psr-4": {
-            "Gabrielbartolace\\BuscadorCursos\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "Gabriel Bartolace",
