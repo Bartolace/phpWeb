@@ -1,22 +1,21 @@
 <?php
 
 use Bartolace\Pdo\Domain\Model\Student;
+use Bartolace\Pdo\Infrastructure\Persistence\ConnectionCreator as ConnectionCreator;
+use Bartolace\Pdo\Infrastructure\Repository\PdoStudentRepository as PdoStudentRepository;
+
 
 require_once "vendor/autoload.php";
 
-$dataBasePath = __DIR__ . '/banco.sql';
-$pdo = new PDO('sqlite:' . $dataBasePath);
+$pdoStudent = new PdoStudentRepository();
 
-$statement = $pdo->query('SELECT * FROM students');
+var_dump($pdoStudent->allStudents());
 
-
-
-//when the process it's was heaviest, we can opt found one data at once to do what we desire, instead of take it all,
-// what can compromise the memory
-
-//just like fetch, run line to line, we can combinated with while
 //$deliverColumn = $statement->fetchColumn(1);
 
+//when the process it's was heaviest, we can opt found one data at once to do what we desire, instead of take it all,
+//what can compromise the memory
+//to run line to line, we can combinated with while
 //while ($studentData = $statement->fetch(PDO::FETCH_ASSOC)) {
 //    $student = new Student(
 //        $studentData['id'],
@@ -25,17 +24,3 @@ $statement = $pdo->query('SELECT * FROM students');
 //    );
 //    echo  $student->age() . PHP_EOL;
 //}
-
-//normally used :
-$studentDataList = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-$studentList = [];
-
-foreach ($studentDataList as $studentData) {
-    $studentList[] = new Student(
-        $studentData['id'],
-        $studentData['name'],
-        new \DateTimeImmutable($studentData['birth_date']),
-    );
-}
-var_dump($studentList);
