@@ -1,10 +1,12 @@
 <?php
 
 use Bartolace\Pdo\Domain\Model\Student;
+use Bartolace\Pdo\Infrastructure\Persistence\ConnectionCreator;
 use Bartolace\Pdo\Infrastructure\Repository\PdoStudentRepository as PdoStudentRepository;
 
 require_once "vendor/autoload.php";
 
-$pdoStudent = new PdoStudentRepository();
+$connection = ConnectionCreator::createConnection();
+$pdoStudent = new PdoStudentRepository($connection);
 
-$pdoStudent->remove(9);
+$pdoStudent->remove(2);

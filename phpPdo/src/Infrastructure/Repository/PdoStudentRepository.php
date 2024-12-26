@@ -3,6 +3,7 @@
 namespace Bartolace\Pdo\Infrastructure\Repository;
 
 use Bartolace\Pdo\Domain\Model\Student;
+
 use Bartolace\Pdo\Domain\Repository\StudentRepository;
 use Bartolace\Pdo\Infrastructure\Persistence\ConnectionCreator;
 use PDO as PDO;
@@ -19,9 +20,24 @@ class PdoStudentRepository implements StudentRepository
 
     public function allStudents(): array
     {
+        $stmt = $this->connection->query('SELECT * FROM students;');
+
+        return $this->hydrateStudentList($stmt);
+    }
+
+    public function studentsBirthAt(\DateTimeInterface $birthDate): array
+    {
+        $statement  = $this->connection->prepare('SELECT * FROM students WHERE birth_date = :birth_date;');
+        $statement->bindValue(':birth_date', $birthDate->format('Y-m-d'));
+        $statement->execute();
+
+        return $this->hydrateStudentList($statement);
+    }
+
+    private function hydrateStudentList(\PDOStatement $stmt): array
+    {
+        $studentDataList = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $studentList = [];
-        $statement          = $this->connection->query('SELECT * FROM students;');
-        $studentDataList    = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($studentDataList as $studentData) {
             $studentList[] = new Student(
@@ -34,27 +50,44 @@ class PdoStudentRepository implements StudentRepository
         return $studentList;
     }
 
-    public function studentsBirthAt(\DateTimeInterface $birthDate): array
-    {
-        $statement  = $this->connection->prepare('SELECT * FROM students WHERE birth_date = :birth_date;');
-        $statement->bindValue(':birth_date', $birthDate);
-
-        if ($statement->execute()) {
-           return $statement->fetchAll(PDO::FETCH_ASSOC);
-        }
-
-        return [];
-    }
-
     public function save(Student $student)
     {
-        $statement = $this->connection->prepare('INSERT INTO students (name, birth_date) VALUES (:name, :birth_date)');
-        $statement->bindValue(':name', $student->name());
-        $statement->bindValue(':birth_date', $student->birthDate()->format(format:'Y-m-d'));
-
-        if ($statement->execute()) {
-            echo 'Student added';
+        if($student->id() === null) {
+            return $this->insert($student);
         }
+
+        return $this->update($student);
+
+    }
+
+    public function update(Student $student)
+    {
+        $stmt = $this->connection->prepare('
+            UPDATE students SET name = :name, birth_date = :birth_date WHERE id = :id;');
+
+        $stmt->bindValue(':name',       $student->name());
+        $stmt->bindValue(':birth_date', $student->birthDate()->format('Y-m-d'));
+        $stmt->bindValue(':id',         $student->id(), PDO::PARAM_INT);
+
+        echo 'Successfully updated student: ' . $student->id();
+        return $stmt->execute();
+    }
+
+    public function insert(Student $student)
+    {
+        $statement = $this->connection->prepare('INSERT INTO students (name, birth_date) VALUES (:name, :birth_date)');
+
+        $success = $statement->execute([
+                ':name' => $student->name(),
+                ':birth_date' => $student->birthDate()->format('Y-m-d'),
+        ]);
+
+        if($success){
+            echo 'success';
+            $student->defineId($this->connection->lastInsertId());
+        }
+
+        return $success;
     }
 
     public function remove(int $idStudent)
