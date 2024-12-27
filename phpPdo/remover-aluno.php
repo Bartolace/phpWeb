@@ -9,4 +9,4 @@ require_once "vendor/autoload.php";
 $connection = ConnectionCreator::createConnection();
 $pdoStudent = new PdoStudentRepository($connection);
 
-$pdoStudent->remove(2);
+$pdoStudent->remove(9);

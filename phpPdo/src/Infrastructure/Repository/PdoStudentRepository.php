@@ -83,7 +83,7 @@ class PdoStudentRepository implements StudentRepository
         ]);
 
         if($success){
-            echo 'success';
+            echo 'success' . PHP_EOL;
             $student->defineId($this->connection->lastInsertId());
         }
 
