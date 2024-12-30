@@ -7,9 +7,14 @@ use Bartolace\Pdo\Infrastructure\Repository\PdoStudentRepository as PdoStudentRe
 require_once "vendor/autoload.php";
 
 $connection = ConnectionCreator::createConnection();
-$pdoStudent = new PdoStudentRepository($connection);
+$studentRepository = new PdoStudentRepository($connection);
 
-var_dump($pdoStudent->allStudents());
+try{
+    var_dump($studentRepository->allStudents());
+
+} catch(PDOException $e){
+    echo $e->getMessage();
+}
 
 //$deliverColumn = $statement->fetchColumn(1);
 
