@@ -13,9 +13,9 @@ class PdoStudentRepository implements StudentRepository
 
     private PDO $connection;
 
-    public function __construct()
+    public function __construct($connection)
     {
-        $this->connection = ConnectionCreator::createConnection();
+        $this->connection = $connection;
     }
 
     public function allStudents(): array
@@ -36,7 +36,7 @@ class PdoStudentRepository implements StudentRepository
 
     private function hydrateStudentList(\PDOStatement $stmt): array
     {
-        $studentDataList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $studentDataList = $stmt->fetchAll();
         $studentList = [];
 
         foreach ($studentDataList as $studentData) {
@@ -76,7 +76,6 @@ class PdoStudentRepository implements StudentRepository
     public function insert(Student $student)
     {
         $statement = $this->connection->prepare('INSERT INTO students (name, birth_date) VALUES (:name, :birth_date)');
-
         $success = $statement->execute([
                 ':name' => $student->name(),
                 ':birth_date' => $student->birthDate()->format('Y-m-d'),
