@@ -7,10 +7,7 @@
           <option name="path" value="$PROJECT_DIR$/tests" />
         </Configuration>
         <Configuration>
-          <option name="path" value="$PROJECT_DIR$/tests" />
-        </Configuration>
-        <Configuration>
-          <option name="path" value="$PROJECT_DIR$/tests" />
+          <option name="path" value="$PROJECT_DIR$/Composer/buscador-cursos-alura/tests" />
         </Configuration>
       </list>
     </option>

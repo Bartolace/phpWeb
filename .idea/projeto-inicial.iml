@@ -2,6 +2,10 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/src" isTestSource="false" packagePrefix="Alura\BuscadorCursos\" />
+      <sourceFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/WEB/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/WEB/vendor/dompdf/dompdf" />
       <excludeFolder url="file://$MODULE_DIR$/WEB/vendor/masterminds/html5" />
@@ -10,6 +14,68 @@
       <excludeFolder url="file://$MODULE_DIR$/WEB/vendor/phenx/php-svg-lib" />
       <excludeFolder url="file://$MODULE_DIR$/WEB/vendor/sabberworm/php-css-parser" />
       <excludeFolder url="file://$MODULE_DIR$/WEB/vendor/setasign/fpdi" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/masterminds/html5" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phpunit/php-invoker" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/cli-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/code-unit" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/complexity" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/lines-of-code" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/squizlabs/php_codesniffer" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/staabm/side-effects-detector" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/symfony/dom-crawler" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/felixfbecker/advanced-json-rpc" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/microsoft/tolerant-php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/netresearch/jsonmapper" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phan/phan" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/phpstan/phpdoc-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/sabre/event" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/tysonandre/var_representation_polyfill" />
+      <excludeFolder url="file://$MODULE_DIR$/Composer/buscador-cursos-alura/vendor/webmozart/assert" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
