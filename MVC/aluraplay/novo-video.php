@@ -7,7 +7,7 @@ $url   = filter_input(INPUT_POST, 'url', FILTER_VALIDATE_URL);
 $title = filter_input(INPUT_POST, 'titulo');
 
 if($url === false || $title === false){
-    header('Location: ./index.php?success=0');
+    header('Location: /?success=0');
     exit();
 }
 
@@ -18,8 +18,8 @@ try{
     $stmt->bindValue(2, $title);
     
     $stmt->execute();
-    header('Location: ./index.php?success=1');
+    header('Location: /?success=1');
 
 }catch(PDOException $e){
-    header('Location: ./index.php?success=0');
+    header('Location: /?success=0');
 }

@@ -9,7 +9,7 @@ $video = [
     'title' => ''
 ];
 
-if($id !== false){
+if(!empty($id)){
     $stmt  = $pdo->prepare('SELECT * from videos where id = ?');
     $stmt->bindValue(1, $id, PDO::PARAM_INT);
     $stmt->execute();
@@ -51,7 +51,6 @@ if($id !== false){
     <main class="container">
 
         <form class="container__formulario" 
-            action="<?= $id !== false ? '/editar-video.php?id=' . $id : './novo-video.php';?>" 
             method="post"
         >
             <h2 class="formulario__titulo">Envie um vídeo!</h2>
