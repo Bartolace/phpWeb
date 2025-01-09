@@ -1,15 +1,17 @@
 <?php
-$dbPath = __DIR__ . '/banco.sqlite';
-$pdo    = new PDO("sqlite:$dbPath");
+use Alura\Mvc\Persistence\ConnectionCreator;
+use Alura\Mvc\Repository\VideoRepository;
 
-$id   = $_GET['id']; 
+require_once __DIR__ . '/vendor/autoload.php';
 
-$sql  = 'DELETE FROM videos WHERE id = ?';
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(1, $id);
+$connection = ConnectionCreator::createConnection();
+$videoRepository = new VideoRepository($connection);
 
-if($stmt->execute() === false) {
-    header('Location: /?success=0');
-} else {
+try{
+    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+    $videoRepository->remove($id);
+
     header('Location: /?success=1');
+}catch(PDOException $e){
+    header('Location: /?success=0');
 }
