@@ -75,4 +75,16 @@ class VideoRepository
         }, $videoList);
     }
 
+    public function byId(int $id) 
+    {
+        try{
+            $stmt  = $this->pdo->prepare('SELECT * from videos where id = ?');
+            $stmt->bindValue(1, $id, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){
+            return throw new PDOException($e->getMessage());
+        }
+    }
+
 }
