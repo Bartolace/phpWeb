@@ -1,6 +1,7 @@
 <?php
 use Alura\Mvc\Persistence\ConnectionCreator;
 use Alura\Mvc\Repository\VideoRepository;
+use Alura\Mvc\Entity\Video;
 
 $connection = ConnectionCreator::createConnection();
 $videoRepository = new VideoRepository($connection);
@@ -13,12 +14,13 @@ if($id === false || $url === false){
     header('Location: /?success=0');
     exit();
 }
-$title  = $_POST['titulo'];
 
+$title = $_POST['titulo'];
+$video = new Video($url, $title);
+$video->setId($id);
 
-try{
-    $videoRepository->update($url, $title, $id);
+if($videoRepository->update($video)){
     header('Location: /?success=1');    
-}catch(PDOException $e){
+}else {
     header('Location: /?success=0');
 }

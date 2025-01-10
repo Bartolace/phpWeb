@@ -7,11 +7,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 $connection = ConnectionCreator::createConnection();
 $videoRepository = new VideoRepository($connection);
 
-try{
-    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-    $videoRepository->remove($id);
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
+if($videoRepository->remove($id)){
     header('Location: /?success=1');
-}catch(PDOException $e){
+}else {
     header('Location: /?success=0');
 }

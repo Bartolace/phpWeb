@@ -25,11 +25,11 @@ class Video{
         $this->id = $id;
     }
 
-    public function getTitulo(){
+    public function getTitulo(): string{
         return $this->title;
     }
 
-    public function getUrl(){
+    public function getUrl(): string{
         return $this->url;
     }
 }

@@ -18,10 +18,8 @@ if($url === false || $title === false){
     exit();
 }
 
-try{
-    $video = $videoRepository->addVideo(new Video($url, $title));
+if($videoRepository->add(new Video($url, $title))){
     header('Location: /?success=1');
-}catch(PDOException $e){
-    //todo: retonar mensagem de erro no front;
+}else {
     header('Location: /?success=0');
 }
